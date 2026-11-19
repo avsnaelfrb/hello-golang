@@ -4,5 +4,5 @@ import "golang-latihan/libraries"
 
 func main() {
 	var jumlah int
-	libraries.Tugas(10, &jumlah)
+	libraries.Tugas(25, &jumlah)
 }

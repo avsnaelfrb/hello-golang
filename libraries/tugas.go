@@ -2,7 +2,6 @@ package libraries
 
 import "fmt"
 
-// isPrime mengecek apakah n hanya habis dibagi 1 dan dirinya sendiri.
 func isPrime(n int) bool {
 	if n < 2 {
 		return false
@@ -15,8 +14,6 @@ func isPrime(n int) bool {
 	return true
 }
 
-// firstPrimes mengambil n bilangan prima pertama mulai dari start.
-// start variadic supaya pemanggil bisa menentukan titik awal (default 2).
 func firstPrimes(n int, start ...int) []int {
 	dari := 2
 	if len(start) > 0 {
@@ -32,19 +29,15 @@ func firstPrimes(n int, start ...int) []int {
 	return prima
 }
 
-// each memanggil callback visit untuk setiap angka di nums.
 func each(nums []int, visit func(int)) {
 	for _, n := range nums {
 		visit(n)
 	}
 }
 
-// Tugas menampilkan n bilangan prima pertama. count diisi lewat pointer
-// supaya pemanggil tahu berapa angka yang sudah ditampilkan.
 func Tugas(n int, count *int) {
 	prima := firstPrimes(n)
 
-	// Lambda: label ditentukan di tempat, tanpa fungsi terpisah.
 	label := func(p int) string {
 		switch {
 		case p < 10:
@@ -56,7 +49,6 @@ func Tugas(n int, count *int) {
 		}
 	}
 
-	// Callback: format cetak diserahkan ke each.
 	printed := 0
 	each(prima, func(p int) {
 		if p > 0 {
